@@ -103,7 +103,7 @@ data:
                   relaxedPathChars="[]|"
                    relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
                   keyAlias="selfsigned" keystoreFile="/opt/atlassian/etc/jira.jks" keystorePass="mypass" keystoreType="jks"/>
-      </Service>
+      </Service></Server>
 ---
 
 apiVersion: v1
