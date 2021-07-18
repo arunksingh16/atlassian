@@ -1,1 +1,207 @@
 
+---
+apiVersion: v1
+data:
+  azurestorageaccountname: <base64 enc>
+  azurestorageaccountkey: <base64 enc>
+kind: Secret
+metadata:
+  name: az-file-share
+type: Opaque
+---
+# this is self signed cert
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: jira-keystore
+  labels:
+    app.kubernetes.io/name: jira-core
+    app.kubernetes.io/instance: dev
+    app.kubernetes.io/version: "8.13.0"
+data:
+  jira.jks: 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
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jira-serverxml
+  labels:
+    app.kubernetes.io/name: jira-core
+    app.kubernetes.io/instance: dev
+    app.kubernetes.io/version: "8.13.0"
+data:
+  server.xml: |
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <Server port="8005"
+            shutdown="SHUTDOWN">
+
+      <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
+      <Listener className="org.apache.catalina.core.AprLifecycleListener"
+                SSLEngine="on"/>
+      <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+      <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+      <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+
+      <Service name="Catalina">
+
+        <Connector port="8080"
+                   maxThreads="100"
+                   minSpareThreads="10"
+                   connectionTimeout="20000"
+                   enableLookups="false"
+                   protocol="HTTP/1.1"
+                   redirectPort="8443"
+                   acceptCount="10"
+                   secure="false"
+                   scheme="http"
+                   proxyName=""
+                   proxyPort=""
+
+                   relaxedPathChars="[]|"
+                   relaxedQueryChars="[]|{}^\`&quot;&lt;&gt;"
+                   bindOnInit="false"
+                   maxHttpHeaderSize="8192"
+                   useBodyEncodingForURI="true"
+                   disableUploadTimeout="true" />
+
+        <Engine name="Catalina"
+                defaultHost="localhost">
+
+          <Host name="localhost"
+                appBase="webapps"
+                unpackWARs="true"
+                autoDeploy="true">
+
+            <Context path=""
+                     docBase="${catalina.home}/atlassian-jira"
+                     reloadable="false"
+                     useHttpOnly="true">
+              <Resource name="UserTransaction"
+                        auth="Container"
+                        type="javax.transaction.UserTransaction"
+                        factory="org.objectweb.jotm.UserTransactionFactory"
+                        jotm.timeout="60"/>
+              <Manager pathname=""/>
+              <JarScanner scanManifest="false"/>
+              <Valve className="org.apache.catalina.valves.StuckThreadDetectionValve"
+                     threshold="120" />
+            </Context>
+
+          </Host>
+          <Valve className="org.apache.catalina.valves.AccessLogValve"
+                 pattern="%a %{jira.request.id}r %{jira.request.username}r %t &quot;%m %U%q %H&quot; %s %b %D &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot; &quot;%{jira.request.assession.id}r&quot;"/>
+        </Engine>
+                            <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+                  maxHttpHeaderSize="8192" SSLEnabled="true"
+                  maxThreads="150" minSpareThreads="25"
+                  enableLookups="false" disableUploadTimeout="true"
+                  acceptCount="100" scheme="https" secure="true"
+                  sslEnabledProtocols="TLSv1.2,TLSv1.3"
+                  clientAuth="false" useBodyEncodingForURI="true"
+                  relaxedPathChars="[]|"
+                   relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
+                  keyAlias="selfsigned" keystoreFile="/opt/atlassian/etc/jira.jks" keystorePass="mypass" keystoreType="jks"/>
+      </Service>
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jira-sts
+  labels:
+    app.kubernetes.io/name: jira-core
+    app.kubernetes.io/instance: dev
+    app.kubernetes.io/version: "8.13.0"
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 8443
+    targetPort: 8443
+    targetPort: 8443
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: jira-core
+    app.kubernetes.io/instance: dev
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jira-sts
+  labels:
+    app.kubernetes.io/name: jira-core
+    app.kubernetes.io/instance: dev
+    app.kubernetes.io/version: "8.13.0"
+spec:
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  serviceName: jira-sts
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: jira-core
+      app.kubernetes.io/instance: dev
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: jira-core
+        app.kubernetes.io/instance: dev
+    spec:
+      terminationGracePeriodSeconds: 1
+      containers:
+        - name: jira-sts
+          image: jira-core:8.13.6
+          imagePullPolicy: IfNotPresent
+          env:
+#            - name: JVM_SUPPORT_RECOMMENDED_ARGS
+#              value: "-Djava.util.prefs.userRoot=/opt/atlassian/jira/temp -Djavax.net.ssl.trustStore=/var/atlassian/application-data/jira/cacerts -Dupm.pac.disable=true"
+#            - name: JVM_MINIMUM_MEMORY
+#              value: "2048m"
+#            - name: JVM_MAXIMUM_MEMORY
+#              value: "2048m"
+#            - name: JVM_RESERVED_CODE_CACHE_SIZE
+#              value: "1024m"
+            - name: SET_PERMISSIONS
+              value: "false"
+          ports:
+            - name: http
+              containerPort: 8443
+              protocol: TCP
+            - name: ehcache
+              containerPort: 40001
+              protocol: TCP
+            - name: ehcacheobject
+              containerPort: 40011
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 1
+              memory: 2Gi
+            requests:
+              cpu: 1
+              memory: 2Gi
+          volumeMounts:
+            - mountPath: /var/atlassian/application-data/jira
+              name: jira-shared
+              subPath: jira
+            - name: jira-keystore
+              mountPath: /opt/atlassian/etc/jira.jks
+              subPath: jira.jks
+            - name: jira-serverxml
+              mountPath: /opt/atlassian/jira/conf/server.xml
+              subPath: server.xml
+      volumes:
+        - name: jira-shared
+          azureFile:
+            secretName: az-file-share
+            shareName: jira
+        - name: jira-keystore
+          secret:
+            secretName: jira-keystore
+        - name: jira-serverxml
+          configMap:
+            name: jira-serverxml
+---
