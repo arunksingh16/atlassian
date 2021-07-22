@@ -4,7 +4,7 @@ To Generate Jira KeyStore for use. Please note I have used self signed cert for 
 ```
 # self signed 
 
-keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass password -validity 360 -keysize 2048
+keytool -genkey -keyalg RSA -alias selfsigned -keystore jira.jks -storepass mypass -validity 360 -keysize 2048
 keytool -noprompt -importkeystore -srckeystore jira.jks -destkeystore jira.jks -deststoretype pkcs12 -srcstorepass mypass -deststorepass mypass
 
 
