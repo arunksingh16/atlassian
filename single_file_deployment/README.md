@@ -18,3 +18,9 @@ keytool -noprompt -import -alias rootCA -keystore jira.jks -trustcacerts -file r
 keytool -noprompt -importkeystore -srckeystore jira.jks -destkeystore jira.jks -deststoretype pkcs12 -srcstorepass mypass -deststorepass mypass
 
 ```
+
+kubernetes YAML generate for secret
+
+```
+kubectl create secret generic jirajks --from-file=jira.jks=jira.jks --dry-run=client -o yaml
+```
